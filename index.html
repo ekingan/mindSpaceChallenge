@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles.css">
+		<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+		<script src="scripts.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="clips">
+						<div id="clip1">
+							<img src="./assets/step_1.jpg" draggable="true" ondragstart="handleDrag(event);" id="step_1" tag="step_1" onmouseover="this.src='./assets/step_1.gif'" onmouseout="this.src='./assets/step_1.jpg'" />
+						</div>
+						<div id="clip2" ondrop="handleDrop(event);" ondragover="event.preventDefault();" onmouseover="this.src='./assets/step_1.gif'" onmouseout="this.src='./assets/step_1.jpg'">
+							<img src="./assets/step_2.jpg" draggable="true" ondragstart="handleDrag(event);" id="step_2" onmouseover="this.src='./assets/step_2.gif'" onmouseout="this.src='./assets/step_2.jpg'" />
+						</div>
+						<div id="clip3" ondrop="handleDrop(event);" ondragover="event.preventDefault();">
+							<img src="./assets/step_3.jpg" draggable="true" ondragstart="handleDrag(event);" id="step_3" onmouseover="this.src='./assets/step_3.gif'" onmouseout="this.src='./assets/step_3.jpg'"/>
+						</div>
+						<div id="clip4" ondrop="handleDrop(event);" ondragover="event.preventDefault();">
+							<img src="./assets/step_4.jpg" draggable="true" ondragstart="handleDrag(event);" id="step_4" onmouseover="this.src='./assets/step_4.gif'" onmouseout="this.src='./assets/step_4.jpg'" />
+						</div>
+						<div id="clip5" ondrop="handleDrop(event);" ondragover="event.preventDefault();">
+							<img src="./assets/step_5.jpg" draggable="true" ondragstart="handleDrag(event);" id="step_5" onmouseover="this.src='./assets/step_5.gif'" onmouseout="this.src='./assets/step_5.jpg'"/>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="movie" >
+						<video controls> 
+							<source src="https://d30lwsttgnoer3.cloudfront.net/v1/bev_Fizzio_Lemon_Ale_MG_360_v01.webm" type="video/mp4" autoplay="false"> 
+						</video>
+					</div>
+				</div>
+			</div>
+	<!-- End of First Row -->
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="answer">
+						<div id="answer1" ondrop="handleDrop(event);" ondragover="event.preventDefault();"></div>
+						<div id="answer2" ondrop="handleDrop(event);" ondragover="event.preventDefault();"></div>
+						<div id="answer3" ondrop="handleDrop(event);" ondragover="event.preventDefault();"></div>
+						<div id="answer4" ondrop="handleDrop(event);" ondragover="event.preventDefault();"></div>
+						<div id="answer5" ondrop="handleDrop(event);" ondragover="event.preventDefault();"></div>
+					</div>
+					<span>
+						<button class="btn btn-lg btn-primary" onClick="score();">Submit</button>
+					</span>
+				</div>
+			</div>
+	</body>
+</html>

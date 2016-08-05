@@ -1,0 +1,47 @@
+body {
+	background-color: #ffffff;
+	margin-top: 10px;
+}
+
+div[id^="clip"] {
+  height: 119px;
+  width: 206px;
+  float: left;
+  border: 3px solid #666666;
+  margin: 5px;
+  align: center;
+  cursor: move;
+}
+
+.answers {
+	background-color: #ccffee;
+}
+
+.movie {
+  float: left;
+  margin-top: 80px;
+  text-align: center;
+  border: 3px solid #666666;
+  
+}
+
+div[id^="answer"] {
+  height: 119px;
+  width: 206px;
+  float: left;
+  border: 3px solid #666666;
+  margin: 8px;
+  align: center;
+  background-color: #ccffee;
+}
+
+img {
+	height: 113px;
+	width: 200px;
+}
+
+button {
+	margin: 20px;
+	margin-top: 40px;
+
+}
