@@ -35,6 +35,13 @@ div[id^="answer"] {
   background-color: #ccffee;
 }
 
+#responses.dim {
+  -webkit-filter:brightness(50%);
+  -moz-filter:brightness(50%);
+  filter: url(#brightness);
+  filter:brightness(50%);
+}
+
 img {
 	height: 113px;
 	width: 200px;
