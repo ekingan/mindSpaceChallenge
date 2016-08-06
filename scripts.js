@@ -4,20 +4,20 @@ function handleDrag(e) {
   e.dataTransfer.setData("text", e.target.id);
 }
 function handleDrop(e){
+
     //gets reference to element being dragged
     var data = e.dataTransfer.getData("text");
-    
     //adds dragged elememnt to target
     var element = document.getElementById(data);
-    
+    var target = document.getElementById("responses");
+    console.log(target.innerHTML);
     //Stop two imaged from going in the same place
-    if (!element.hasChildNodes()) {
+    if (target.innerHTML !== "IMG") {
       e.target.appendChild(element);
       e.preventDefault();
-
   }
 }
-
+//refactor
 function score() {
   var count = 0;
   var firstBox = document.getElementById("answer1");
@@ -63,11 +63,13 @@ function score() {
       }
     if (count == 5) {
       videoPlay();
-      dimImages();
+      setTimeout(dimImages, 1000);
 
     } else {
       console.log(count);
     }
+
+    scorePercentage(count);
   
 }
 
@@ -85,76 +87,13 @@ function dimImages() {
   element.classList.add("dim");
 }
 
-
-// function handleDragStart(e) {
-//     e.dataTransfer.setData("text", e.target.id);
-//     // Set the drag effect to move
-//     // e.dataTransfer.dropEffect = "move";
-//     //Changes the clip to a static image when dragging
-//     // var img = new Image(); 
-//     // img.src = 'example.gif'; 
-//     // e.dataTransfer.setDragImage(img, 100, 100);
-// }
-
-// function handleDragOver(e) {
-//   e.preventDefault();
-
-// }
-
-// function handleDrop(e) {
-//   //gets reference to element being dragged
-//   var data = e.dataTransfer.getData("text");
-//   //adds dragged elememnt to target
-//   var element = document.getElementById(data);
-//   e.target.innerHTML = document.getElementById(data);
-//   // e.target.appendChild(element);
-//   e.preventDefault();
-//   //gets reference to element being dragged
-//   // var data = e.dataTransfer.getData("text");
-//   // //gets element
-//   // e.target.innerHTML = document.getElementById(data);
-//   // e.preventDefault();
-
-//   // console.log(data);
-//   // //e.target.appendChild(document.getElementById(data));
+function scorePercentage(count) {
+  var totalPossible = document.getElementById("responses").children.length;
+  var userScore = parseFloat(count/totalPossible);
+  console.log(userScore);
   
-//   // var element = e.target.id
-//   // // element.classList.remove('over');
-//   // console.log("this is the id:", element);
-// }
-// function allowDrop(e) {
-//     e.preventDefault();
-
-// }
-
-// function handleHoverOver(e) {
-//   // e.preventDefault();
-//   // e.target.value
-//   // var element = document.getElementById("answers");
-//   // element.classList.add('over');
-  
-// }
-
-// function handleDragLeave(e) {
-  
-  
-// }
-
-// function handleDragEnd(e) {
-
-// }
+}
 
 
-// // var clips = document.querySelectorAll('#clips .clip');
-// // [].forEach.call(clips, function(clip) {
-// //   clip.addEventListener('ondragstart', handleDragStart, false);
-// //   clip.addEventListener('ondragend', handleDragEnd, false);
-// // });
 
 
-// // var answers = document.querySelectorAll('#answers .answer');
-// // [].forEach.call(answers, function(answer) {
-// //   answer.addEventListener('ondragenter', handleDragEnter, false);
-// //   answer.addEventListener('ondragover', handleDragOver, false);
-// //   answer.addEventListener('ondragleave', handleDragLeave, false);
-// // });
