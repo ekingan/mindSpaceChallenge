@@ -5,24 +5,24 @@ body {
 
 .container {
   background-color: #39a9db;
-  border: 2px solid #101935;
+  /*border: 2px solid #101935;*/
   border-radius: 25px;
   margin: 10px;
   align-self: center;
 }
 #response {
   background-color: #9db3b5;
-  border: 2px solid #101935;
+  /*border: 2px solid #101935;*/
   border-radius: 15px;
   margin: 10px;
 }
 
 div[id^="clip"] {
-  height: 89px;
-  width: 166px;
+  height: 83px;
+  width: 160px;
   float: left;
-  border: 3px solid #101935;
-  border-radius: 5px;
+/*  border: 3px solid #101935;*/
+/*  border-radius: 10px;*/
   margin: 10px;
   align: center;
   cursor: move;
@@ -31,19 +31,19 @@ div[id^="clip"] {
 
 video {
   float: left;
-  margin-top: 60px;
+  margin-top: 30px;
   text-align: center;
-  border: 3px solid #101935;
+  /*border: 3px solid #101935;*/
   border-radius: 5px;
   
 }
 
 div[id^="answer"] {
-  height: 89px;
-  width: 166px;
+  height: 87px;
+  width: 164px;
   float: left;
-  border: 3px solid #101935;
-  border-radius: 5px;
+  border: 2px solid #101935;
+  /*border-radius: 5px;*/
   margin: 8px;
   align: center;
   background-color: #f39237;
@@ -67,7 +67,17 @@ button {
 
 }
 
-.btn-primary {
-  background-color: #d63230;
-  border: 2px solid #101935;
+#lessonScore, #current {
+  float: right;
+  margin-right: 30px;
+  color: #ffffff;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 14px;
+  padding-top: 10px;
+  
 }
+
+/*.btn-primary {
+  background-color: #d63230;
+  
+}*/

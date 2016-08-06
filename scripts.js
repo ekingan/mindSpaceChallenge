@@ -1,16 +1,24 @@
 console.log("Sanity Check");
 
+function getCurrentScore(retrievedScore, currentScore){
+ if (retrievedScore === null) {
+  var currentScore = 0;
+ } else {
+  currentScore = (retrievedScore + score);
+  console.log(currentScore);
+ }
+}
+
 function handleDrag(e) {
   e.dataTransfer.setData("text", e.target.id);
 }
-function handleDrop(e){
 
+function handleDrop(e){
     //gets reference to element being dragged
     var data = e.dataTransfer.getData("text");
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    console.log(target.innerHTML);
     //Stop two imaged from going in the same place
     if (target.innerHTML !== "IMG") {
       e.target.appendChild(element);
@@ -18,7 +26,7 @@ function handleDrop(e){
   }
 }
 //refactor
-function score() {
+function lesson() {
   var count = 0;
   var firstBox = document.getElementById("answer1");
   var firstAnswer = firstBox.children[0].id;
@@ -66,10 +74,13 @@ function score() {
       setTimeout(dimImages, 1000);
 
     } else {
-      console.log(count);
+      
     }
-
+    currentScore(count);
+    setScore(count);
     scorePercentage(count);
+    score();
+    
   
 }
 
@@ -90,9 +101,39 @@ function dimImages() {
 function scorePercentage(count) {
   var totalPossible = document.getElementById("responses").children.length;
   var userScore = parseFloat(count/totalPossible);
-  console.log(userScore);
   
 }
+
+function score() {
+//returns raw score from memory
+  var lessonScore = localStorage.getItem("highScore");
+  if (lessonScore && lessonScore > 0) {
+    document.getElementById('lessonScore').innerHTML = "Your high score is " + lessonScore + " out of 5" ;
+  } else {
+    document.getElementById('lessonScore').style.display = "Take the ";
+  }
+}
+
+function setScore(count){
+  var currentScore = count;
+  var highScore = localStorage.getItem("highScore");
+    if(highScore !== null) {
+      if (count > highScore) {
+        localStorage.setItem("highScore", currentScore);
+      }
+    } else {
+      localStorage.setItem("highScore", currentScore);
+    }
+    console.log("high score is : " , highScore);
+}
+
+function currentScore(count) {
+  document.getElementById('current').innerHTML = "Your current score is " + count + " out of 5" ;
+}
+
+
+
+
 
 
 
