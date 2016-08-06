@@ -1,14 +1,5 @@
 console.log("Sanity Check");
 
-function getCurrentScore(retrievedScore, currentScore){
- if (retrievedScore === null) {
-  var currentScore = 0;
- } else {
-  currentScore = (retrievedScore + score);
-  console.log(currentScore);
- }
-}
-
 function handleDrag(e) {
   e.dataTransfer.setData("text", e.target.id);
 }
@@ -19,56 +10,37 @@ function handleDrop(e){
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    //Stop two imaged from going in the same place
-    if (target.innerHTML !== "IMG") {
+    var child = target.children[0].sibling;
+    console.log(child);
+    //Stop two images from going in the same place
+    if (!child) {
       e.target.appendChild(element);
       e.preventDefault();
+  } else {
+    return;
   }
 }
-//refactor
+//this function is called when the submit button is pressed
 function lesson() {
+  //counter used to keep track of score
   var count = 0;
-  var firstBox = document.getElementById("answer1");
-  var firstAnswer = firstBox.children[0].id;
-    if (firstAnswer == "step_1") {
-      firstBox.style.borderColor="#00ff00";
-      count ++;
+  //loops through all answers to check them for correctness
+  for (var i = 1; i <= 5; i++) {
+    var box = document.getElementById("answer" + i);
+    var answer = box.children[0].id;
+      if (answer === ("step_" + i)) {
+        //turns border green if correct
+        box.style.borderColor = "#00ff00";
+        //adds a point to the player's score
+        count ++;
+        //turns border red if answer is incorrect
     } else {
-      firstBox.style.borderColor="red";
+      box.style.borderColor = 'red';
     }
-  var secondBox = document.getElementById("answer2");
-  var secondAnswer = secondBox.children[0].id;
-    if (secondAnswer == "step_2") {
-      secondBox.style.borderColor="#00ff00";
-      count ++;
-    } else {
-      secondBox.style.borderColor="red";
-    }
-    var thirdBox = document.getElementById("answer3");
-    var thirdAnswer = thirdBox.children[0].id;
-      if (thirdAnswer == "step_3") {
-        thirdBox.style.borderColor="#00ff00";
-        count ++;
-      } else {
-        thirdBox.style.borderColor="red";
-      }
-    var fourthBox = document.getElementById("answer4");
-    var fourthAnswer = fourthBox.children[0].id;
-      if (fourthAnswer == "step_4") {
-        fourthBox.style.borderColor="#00ff00";
-        count ++;
-      } else {
-        fourthBox.style.borderColor="red";
-      }
-    var fifthBox = document.getElementById("answer5");
-    var fifthAnswer = fifthBox.children[0].id;
-    console.log(fifthAnswer);
-      if (fifthAnswer == "step_5") {
-        fifthBox.style.borderColor="#00ff00";
-        count ++;
-      } else {
-        fifthBox.style.borderColor="red";
-      }
+
+  }
+    //if all answers are correct, the video plays
+    //and after one second the imaged dim by 50%
     if (count == 5) {
       videoPlay();
       setTimeout(dimImages, 1000);
@@ -76,9 +48,13 @@ function lesson() {
     } else {
       
     }
+    //calculates current score and diplays it in DOM
     currentScore(count);
+    //sets the score in memory
     setScore(count);
+    //calculates the percentage correct
     scorePercentage(count);
+    //returns highscore from localStorage and displays in DOM
     score();
     
   
@@ -110,7 +86,7 @@ function score() {
   if (lessonScore && lessonScore > 0) {
     document.getElementById('lessonScore').innerHTML = "Your high score is " + lessonScore + " out of 5" ;
   } else {
-    document.getElementById('lessonScore').style.display = "Take the ";
+    return
   }
 }
 
@@ -124,7 +100,7 @@ function setScore(count){
     } else {
       localStorage.setItem("highScore", currentScore);
     }
-    console.log("high score is : " , highScore);
+    
 }
 
 function currentScore(count) {
