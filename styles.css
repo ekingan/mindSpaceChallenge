@@ -69,11 +69,10 @@ button {
 
 }
 
-#lessonScore, #current {
-  margin-left: 20px;
+#lessonScore, #current, #complete {
   color: #ffffff;
   font-family: 'Oxygen', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   padding-top: 10px;
   
 }

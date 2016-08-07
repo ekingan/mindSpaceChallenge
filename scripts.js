@@ -19,9 +19,6 @@ function handleDrop(e){
     // } else {
     //   return;
     // }
-    
-    
-  
 }
 //this function is called when the submit button is pressed
 function lesson() {
@@ -56,10 +53,10 @@ function lesson() {
     currentScore(count);
     //sets the score in memory
     setScore(count);
-    //calculates the percentage correct
-    scorePercentage(count);
     //returns highscore from localStorage and displays in DOM
     score();
+    //marks lesson comeplete or incomplete
+    lessonComplete(count, length);
     
   
 }
@@ -109,6 +106,18 @@ function setScore(count){
 
 function currentScore(count) {
   document.getElementById('current').innerHTML = "Your current score is " + count + " out of 5" ;
+}
+
+function lessonComplete(count, length) {
+  var userScore = parseFloat(count/length);
+  console.log(userScore);
+  if (userScore >= 0.8) {
+    document.getElementById('complete').innerHTML = "You have completed the test!";
+    localStorage.setItem("complete", true);
+  } else {
+    document.getElementById('complete').innerHTML = "Your score was too low, please try again";
+    localStorage.setItem("complete", false);
+  }
 }
 
 
