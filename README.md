@@ -26,7 +26,7 @@ I tried to model my own methods after the methods described in the LMS API docum
 
 ## If I had more time
 
-If I had more time to work on this, I would make it impossible for a user to drop an image on a placeholder that already had an image. I found this really difficult for some reason.
+If I had more time to work on this, I would make it impossible for a user to drop an image on a placeholder that already had an image. 
 I would also work on the styling.
 
 ##Thanks! This was really fun!
