@@ -5,12 +5,12 @@
 ## What I did: 
 
 * There are 5 images on the left side that relate to the video in the center
-* The player is to drag and drop the images in to the yellow boxes below the video
+* The player is to drag and drop the images into the yellow boxes below the video
 * Once the player has completed their task, they click the "submit" button to see their score (I realize this deviates from the instructions but I thought it would be a better user experience)
 * The correct answers will show a green border
 * The incorrect answers will show a red border
-* If all of the answers are correct, the placeholders will dim to 50% (after a 1 second time delay) and the video plays.
-* If the player gets 80% of the answers correct, the lesson is marked completed. Otherwise, it is incomeplete and the player is prompted to retake the test.
+* If all of the answers are correct, the placeholders will dim to 50% (after a 1 second time delay) and the video will play.
+* If the player gets 80% of the answers correct, the lesson is marked completed. Otherwise, it is marked incompelete and the player is prompted to retake the test.
 
 ### Additional functionality:
 
@@ -21,7 +21,7 @@
 
 Instead of using the LMS API, I used localStorage to save the user's high score.
 The current score and the high score will be displayed on the screen each time the user plays the game. 
-The status of the game is saved to local storage and is displayed in the DOM as complete or incomplete.
+The status of the game is saved to localStorage and is displayed in the DOM as complete or incomplete.
 I tried to model my own methods after the methods described in the LMS API documentation. 
 
 ## If I had more time
