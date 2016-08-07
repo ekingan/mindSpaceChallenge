@@ -10,11 +10,16 @@ function handleDrop(e){
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    
+    var tag = target.getElementsByTagName('img').length;
+    console.log(tag);
     //Stop two images from going in the same place
-    
+    // if (tag< 1) {
       e.target.appendChild(element);
       e.preventDefault();
+    // } else {
+    //   return;
+    // }
+    
     
   
 }
