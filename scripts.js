@@ -10,22 +10,21 @@ function handleDrop(e){
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    var child = target.children[0].sibling;
-    console.log(child);
+    
     //Stop two images from going in the same place
-    if (!child) {
+    
       e.target.appendChild(element);
       e.preventDefault();
-  } else {
-    return;
-  }
+    
+  
 }
 //this function is called when the submit button is pressed
 function lesson() {
   //counter used to keep track of score
   var count = 0;
+  var length = document.getElementById("responses").children.length;
   //loops through all answers to check them for correctness
-  for (var i = 1; i <= 5; i++) {
+  for (var i = 1; i <= length; i++) {
     var box = document.getElementById("answer" + i);
     var answer = box.children[0].id;
       if (answer === ("step_" + i)) {
@@ -86,7 +85,7 @@ function score() {
   if (lessonScore && lessonScore > 0) {
     document.getElementById('lessonScore').innerHTML = "Your high score is " + lessonScore + " out of 5" ;
   } else {
-    return
+    return;
   }
 }
 
