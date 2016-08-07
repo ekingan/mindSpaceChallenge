@@ -85,7 +85,7 @@ function score() {
 //returns raw score from memory
   var lessonScore = localStorage.getItem("highScore");
   if (lessonScore && lessonScore > 0) {
-    document.getElementById('lessonScore').innerHTML = "Your high score is " + lessonScore + " out of 5" ;
+    document.getElementById('lessonScore').innerHTML = "High score: " + lessonScore + " out of 5" ;
   } else {
     return;
   }
@@ -105,7 +105,7 @@ function setScore(count){
 }
 
 function currentScore(count) {
-  document.getElementById('current').innerHTML = "Your current score is " + count + " out of 5" ;
+  document.getElementById('current').innerHTML = "Current score: " + count + " out of 5" ;
 }
 
 function lessonComplete(count, length) {
