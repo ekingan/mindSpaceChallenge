@@ -34,7 +34,7 @@ DRY.
 ### Here is an example:
 
 ```
-function handleDropOnAnswer1(event) {
+function handleDropOnAnswer1(e) {
     var data = e.dataTransfer.getData("text");
     var element = document.getElementById(data);
     var target = document.getElementById("answer1");
