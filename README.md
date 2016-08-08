@@ -17,16 +17,32 @@
 * Mousing over a clip changes the static image to an animated gif
 * When dragging the clip, the image becomes static. 
 
-## Challenges
+##localStorage vs. API
 
 Instead of using the LMS API, I used localStorage to save the user's high score.
 The current score and the high score will be displayed on the screen each time the user plays the game. 
 The status of the game is saved to localStorage and is displayed in the DOM as complete or incomplete.
 I tried to model my own methods after the methods described in the LMS API documentation. 
 
-## If I had more time
+## Known Issues
 
-If I had more time to work on this, I would make it impossible for a user to drop an image on a placeholder that already had an image. 
-I would also work on the styling.
+As it stands, the code allows the user to drag and drop multiple images on the same placeholder.
+I fussed with this issue a lot and could not find a way around it other than creating a separate handleDrop(e) function
+for each placeholder. I think there must be a better way though since the resuling code would not be
+DRY. 
 
+### Here is an example:
+
+----
+ function handleDropOnAnswer1(event) {
+    var data = e.dataTransfer.getData("text");
+    var element = document.getElementById(data);
+    var target = document.getElementById("answer1");
+    var image = target.innerHTML;
+  	if (!image) {
+  		e.target.appendChild(element);
+      e.preventDefault();
+  	}
+}
+----
 ##Thanks! This was really fun!
