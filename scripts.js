@@ -10,16 +10,15 @@ function handleDrop(e){
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    var tag = target.getElementsByTagName('img').length;
-    console.log(tag);
+    var tag = target.getElementsByTagName('img');
+    console.log(target.innerHTML);
     //Stop two images from going in the same place
-    // if (tag< 1) {
+    
       e.target.appendChild(element);
       e.preventDefault();
-    // } else {
-    //   return;
-    // }
+
 }
+
 //this function is called when the submit button is pressed
 function lesson() {
   //counter used to keep track of score
