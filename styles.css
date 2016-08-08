@@ -44,7 +44,7 @@ div[id^="answer"] {
   height: 87px;
   width: 164px;
   float: left;
-  border: 2px solid #101935;
+  /*border: 2px solid #101935;*/
   /*border-radius: 5px;*/
   margin: 8px;
   align: center;
