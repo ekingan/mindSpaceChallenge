@@ -33,8 +33,8 @@ DRY.
 
 ### Here is an example:
 
-----
- function handleDropOnAnswer1(event) {
+```
+function handleDropOnAnswer1(event) {
     var data = e.dataTransfer.getData("text");
     var element = document.getElementById(data);
     var target = document.getElementById("answer1");
@@ -44,5 +44,5 @@ DRY.
       e.preventDefault();
   	}
 }
-----
+```
 ##Thanks! This was really fun!
