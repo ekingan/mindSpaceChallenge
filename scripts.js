@@ -10,9 +10,8 @@ function handleDrop(e){
     //adds dragged elememnt to target
     var element = document.getElementById(data);
     var target = document.getElementById("responses");
-    var tag = target.getElementsByTagName('img');
-    console.log(target.innerHTML);
-    //Stop two images from going in the same place
+    
+  //This does not stop two images from going in the same place
     
       e.target.appendChild(element);
       e.preventDefault();
