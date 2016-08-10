@@ -47,7 +47,7 @@ function handleDropOnAnswer1(e) {
 ```
 ## If I had more time I would:
 
-*Randomize the clips in the column on the left
-*Build this in React
+* Randomize the clips in the column on the left
+* Build this in React
 
 ##Thanks! This was really fun!
